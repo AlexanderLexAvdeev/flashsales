@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as client;
 
 class NetworkClient {
-  static final String _scheme = "https://";
+  static const _scheme = "https://";
 
   String _host;
 
