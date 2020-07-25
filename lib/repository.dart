@@ -9,7 +9,7 @@ class Repository {
   Future<Product> getProduct(String query) async {
     return Product.fromJson(
       json.decode(
-        await _restApi.search(query),
+        await _restApi.findProduct(query),
       ),
     );
   }

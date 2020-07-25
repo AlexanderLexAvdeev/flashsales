@@ -7,7 +7,7 @@ class RestApi {
 
   final _networkClient = NetworkClient(_host);
 
-  Future<String> search(String query) async {
+  Future<String> findProduct(String query) async {
     Response _response = await _networkClient.get("/api/v1/search/$query");
     return _response.body;
   }
