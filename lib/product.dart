@@ -3,7 +3,9 @@ class Product {
 
   Product.fromJson(Map<String, dynamic> jsonBody) {
     for (int i = 0; i < jsonBody["products"].length; i++) {
-      _productList.add(_ProductUnit(jsonBody["products"][i]));
+      _productList.add(
+        _ProductUnit(jsonBody["products"][i]),
+      );
     }
   }
 
