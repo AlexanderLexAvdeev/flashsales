@@ -2,7 +2,8 @@ class Product {
   final _productList = List<_ProductUnit>();
 
   Product.fromJson(Map<String, dynamic> jsonBody) {
-    for (int i = 0; i < jsonBody["products"].length; i++) {
+    int productListLength = jsonBody["products"]?.length ?? 0;
+    for (int i = 0; i < productListLength; i++) {
       _productList.add(
         _ProductUnit(jsonBody["products"][i]),
       );
