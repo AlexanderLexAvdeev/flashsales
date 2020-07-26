@@ -1,24 +1,24 @@
 class Product {
-  final _productList = List<_ProductUnit>();
+  final _productList = List<ProductUnit>();
 
   Product.fromJson(Map<String, dynamic> jsonBody) {
     int productListLength = jsonBody["products"]?.length ?? 0;
     for (int i = 0; i < productListLength; i++) {
       _productList.add(
-        _ProductUnit(jsonBody["products"][i]),
+        ProductUnit(jsonBody["products"][i]),
       );
     }
   }
 
-  List<_ProductUnit> get list => _productList;
+  List<ProductUnit> get list => _productList;
 }
 
-class _ProductUnit {
+class ProductUnit {
   String _imagePath;
   String _name;
   String _priceVat;
 
-  _ProductUnit(dynamic jsonItem) {
+  ProductUnit(dynamic jsonItem) {
     _imagePath = jsonItem["image"];
     _name = jsonItem["name"];
     _priceVat = jsonItem["price_vat"].toString();
