@@ -21,7 +21,7 @@ class _ProductUnit {
   _ProductUnit(dynamic jsonItem) {
     _imagePath = jsonItem["image"];
     _name = jsonItem["name"];
-    _priceVat = jsonItem["price_vat"];
+    _priceVat = jsonItem["price_vat"].toString();
   }
 
   String get image => _imagePath;
