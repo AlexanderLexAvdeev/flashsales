@@ -18,12 +18,19 @@ class _SearchPageState extends State<SearchPage> {
       body: StreamBuilder(
         stream: productBloc.fetchProduct,
         builder: (BuildContext context, AsyncSnapshot<Product> snapshot) {
+          if (snapshot.hasError) {
+            return Center(
+              child: Text(
+                "Запрос не выполнен",
+              ),
+            );
+          }
           if (snapshot.hasData) {
             Product product = snapshot.data;
             if (product.list.isEmpty) {
               return Center(
                 child: Text(
-                  "По вашему запросу ничего не найдено",
+                  "По данному запросу ничего не найдено",
                 ),
               );
             }

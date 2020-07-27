@@ -12,8 +12,13 @@ class ProductBloc {
   Stream<Product> get fetchProduct => _productStreamController.stream;
 
   Future<void> getProduct(String query) async {
-    _productStreamController.sink.add(
-      await _repository.getProduct(query),
+    await _repository.getProduct(query).then(
+      (product) {
+        _productStreamController.sink.add(product);
+      },
+      onError: (error) {
+        _productStreamController.sink.addError(error);
+      },
     );
   }
 
