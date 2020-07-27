@@ -6,7 +6,7 @@ class MobileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Flashsales demo",
+      title: "Flash Sales",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
