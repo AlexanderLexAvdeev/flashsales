@@ -2,15 +2,15 @@ import 'package:flashsales/product.dart';
 import 'package:flutter/material.dart';
 
 class ProductListItem extends StatelessWidget {
-  final ProductUnit productUnit;
+  final ProductUnit _productUnit;
 
-  const ProductListItem(this.productUnit);
+  const ProductListItem(this._productUnit);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: Image.network(
-        productUnit.image,
+        _productUnit.image,
         width: 48,
         height: 48,
         loadingBuilder: (BuildContext context, Widget child,
@@ -29,13 +29,13 @@ class ProductListItem extends StatelessWidget {
         },
       ),
       title: Text(
-        productUnit.name,
+        _productUnit.name,
         style: TextStyle(
           fontWeight: FontWeight.bold,
         ),
       ),
       trailing: Text(
-        "${productUnit.price} BYN",
+        "${_productUnit.price} BYN",
       ),
     );
   }
