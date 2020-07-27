@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../product.dart';
-import 'list_item.dart';
+import 'product_list_item.dart';
 
 class ProductListView extends StatelessWidget {
   final Product _product;
@@ -19,7 +19,7 @@ class ProductListView extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         itemCount: _product.list.length,
         itemBuilder: (BuildContext context, int index) {
-          return ListItem(_product.list[index]);
+          return ProductListItem(_product.list[index]);
         },
         separatorBuilder: (BuildContext context, int index) {
           return Divider();

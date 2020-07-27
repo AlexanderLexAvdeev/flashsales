@@ -1,10 +1,10 @@
 import 'package:flashsales/product.dart';
 import 'package:flutter/material.dart';
 
-class ListItem extends StatelessWidget {
+class ProductListItem extends StatelessWidget {
   final ProductUnit productUnit;
 
-  const ListItem(this.productUnit);
+  const ProductListItem(this.productUnit);
 
   @override
   Widget build(BuildContext context) {
