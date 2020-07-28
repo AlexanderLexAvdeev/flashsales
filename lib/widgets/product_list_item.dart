@@ -9,24 +9,20 @@ class ProductListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.network(
-        _productUnit.image,
+      leading: SizedBox(
         width: 48,
         height: 48,
-        loadingBuilder: (BuildContext context, Widget child,
-            ImageChunkEvent loadingProgress) {
-          if (loadingProgress == null) {
-            return child;
-          }
-          return Center(
-            child: CircularProgressIndicator(
-              value: loadingProgress.expectedTotalBytes != null
-                  ? loadingProgress.cumulativeBytesLoaded /
-                      loadingProgress.expectedTotalBytes
-                  : null,
+        child: Stack(
+          children: <Widget>[
+            Icon(
+              Icons.image,
+              color: Colors.grey,
             ),
-          );
-        },
+            Image.network(
+              _productUnit.image,
+            ),
+          ],
+        ),
       ),
       title: Text(
         _productUnit.name,
