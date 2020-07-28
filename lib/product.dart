@@ -1,6 +1,10 @@
 class Product {
   final _productList = List<ProductUnit>();
 
+  bool inSearching = false;
+
+  Product({this.inSearching});
+
   Product.fromJson(Map<String, dynamic> jsonBody) {
     int productListLength = jsonBody["products"]?.length ?? 0;
     for (int i = 0; i < productListLength; i++) {

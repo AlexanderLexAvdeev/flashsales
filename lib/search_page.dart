@@ -27,6 +27,11 @@ class _SearchPageState extends State<SearchPage> {
           }
           if (snapshot.hasData) {
             Product product = snapshot.data;
+            if (product.inSearching) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
             if (product.list.isEmpty) {
               return Center(
                 child: Text(
